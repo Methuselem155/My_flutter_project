@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_work/pages/help_page.dart';
 import 'package:provider/provider.dart';
-import 'pages/data_model.dart'; // Import the DataModel
+
+import 'package:flutter_work/pages/sign_up_page.dart'; 
 import 'pages/about_page.dart';
+import 'pages/data_model.dart';
 import 'pages/data_page.dart';
 import 'pages/home_page.dart';
 import 'pages/login_page.dart';
@@ -10,7 +12,7 @@ import 'pages/login_page.dart';
 void main() {
   runApp(
     ChangeNotifierProvider(
-      create: (context) => DataModel(), // Provide the DataModel
+      create: (context) => DataModel(), 
       child: MyApp(),
     ),
   );
@@ -32,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/about': (context) => AboutPage(),
         '/data': (context) => DataPage(),
         '/help': (context) => HelpPage(),
+        '/signup': (context) => SignUpPage(), 
       },
     );
   }

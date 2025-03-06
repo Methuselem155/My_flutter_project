@@ -7,11 +7,11 @@ class DataModel extends ChangeNotifier {
 
   void addEntry(String name, String regno) {
     _entries.add({'name': name, 'regno': regno});
-    notifyListeners(); // Notify listeners to update the UI
+    notifyListeners();
   }
 
   void deleteEntry(int index) {
     _entries.removeAt(index);
-    notifyListeners(); // Notify listeners to update the UI
+    notifyListeners(); 
   }
 }

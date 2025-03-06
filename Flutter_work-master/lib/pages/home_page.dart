@@ -1,10 +1,12 @@
+
+
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:flutter_work/pages/about_page.dart';
 import 'package:flutter_work/pages/data_page.dart';
 import 'package:flutter_work/pages/help_page.dart';
-import 'package:flutter_work/pages/login_page.dart'; // Import the LoginPage
+import 'package:flutter_work/pages/login_page.dart'; 
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,11 +16,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0; // Track the selected index for the top navigation bar
+  int _selectedIndex = 0; 
 
-  // List of pages to navigate to
+ 
   static final List<Widget> _pages = [
-    HomeContent(), // Replace with your home content widget
+    HomeContent(), 
     const AboutPage(),
     const DataPage(),
     const HelpPage(),
@@ -30,16 +32,16 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  // Logout method
+  
   void _logout(BuildContext context) {
-    // Clear any user session data (e.g., tokens, logged-in state)
-    // Example: Clear shared preferences, reset state, etc.
+    
+    
 
-    // Navigate to the LoginPage and remove all previous routes
+   
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(builder: (context) => const LoginPage()),
-      (route) => false, // Remove all routes
+      (route) => false, 
     );
   }
 
@@ -48,9 +50,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Container(
-          height: 80, // Set the height of the black rectangle
+          height: 80, 
           decoration: const BoxDecoration(
-            color: Colors.black, // Black background for the entire row
+            color: Colors.black, 
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -62,8 +64,8 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        toolbarHeight: 80, // Set AppBar height to match the black rectangle
-        automaticallyImplyLeading: false, // Remove the back button (if any)
+        toolbarHeight: 80, 
+        automaticallyImplyLeading: false,
         flexibleSpace: Container(
           color: Colors.black, // Ensure the entire AppBar background is black
         ),
@@ -91,12 +93,12 @@ class _HomePageState extends State<HomePage> {
             icon,
             color: _selectedIndex == index ? Colors.blue[900] : Colors.white, // Blue for selected, white for unselected
           ),
-          const SizedBox(height: 4), // Add spacing between icon and text
+          const SizedBox(height: 4), 
           Text(
             label,
             style: TextStyle(
               color: _selectedIndex == index ? Colors.blue[900] : Colors.white, // Blue for selected, white for unselected
-              fontSize: 12, // Adjust text size if needed
+              fontSize: 12, 
             ),
           ),
         ],
@@ -105,7 +107,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// Placeholder for the home content
+
 class HomeContent extends StatelessWidget {
   const HomeContent({super.key});
 
